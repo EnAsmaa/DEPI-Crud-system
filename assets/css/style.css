@@ -1,0 +1,32 @@
+*
+{
+    box-sizing: border-box;
+}
+h1
+{
+    font-size: 50px;
+    background: linear-gradient(90deg,rgb(204, 44, 66) 40%, yellow);
+    -webkit-background-clip: text;  
+    background-clip: text;            
+    -webkit-text-fill-color: transparent;
+    color: transparent;               
+}
+
+.details input
+{
+    width: 18%;
+    outline: none;
+}
+
+.details label
+{
+    width: 15%;
+}
+.form-control:focus
+{
+    box-shadow: none;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0 20px;
+}
