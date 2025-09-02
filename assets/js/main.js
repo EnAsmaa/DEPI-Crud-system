@@ -163,21 +163,24 @@ try
     })
 
 // search function
-    function searchItem(term)
+    let selectedOption="Title";
+    document.getElementById('select').addEventListener('change',function(){
+        selectedOption=this.value;
+    });
+    
+    function searchItem(term,option)
     {
-        let searchedArr=[];
-        searchItem=itemsArr.filter((el)=>{
-            if(el.title.trim().toLowerCase().includes(term.toLowerCase().trim()))
-            {
-                searchedArr.push(el);
-            }
+        let searchedArr=itemsArr.filter((el)=>{
+            return(el[option.trim().toLowerCase()] && el[option.trim().toLowerCase()].trim().toLowerCase().includes(term.toLowerCase().trim()))
         })
+        console.log(searchedArr);
+        
         renderItems(searchedArr);
     }
     searchInput.addEventListener('input',()=>{
-        searchItem(searchInput.value);
+        searchItem(searchInput.value,selectedOption);
     })
-    
+
 // validation function
     function validation(input) {
         let regex = {
